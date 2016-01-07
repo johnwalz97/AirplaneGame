@@ -1,0 +1,89 @@
+* {
+    margin: 0px, auto;
+    padding: 0px;
+}
+body {
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height:100%;
+    cursor: none;
+    z-index: 98;
+}
+.startgame {
+    position: absolute;
+    z-index: 102;
+    top: 100px;
+    width: 200px;
+    margin-left: -100px;
+    left: 50%;			
+}
+.overlay {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    background: white;
+}
+.bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    left: 0px;
+}
+#first {
+    background: url("/assets/background.jpg");
+    background-size: cover;
+}
+#second {
+    background: url("/assets/background1.jpg");
+    background-size: cover;
+}
+#third {
+    background: url("/assets/background2.jpg");
+    background-size: cover;
+}
+#canvas{
+/*	background: url("background.jpg");
+    background-size: cover;*/
+    position:fixed;
+    top: 0px;
+    left: 0px;
+    width:100%;
+    height:100%;
+    cursor: none;
+    z-index: 99;
+}
+.bullet{
+    position:absolute;
+    background-color:red;
+    border: 1px solid red;
+    width:10px;
+    height:10px;
+    border-radius:10px;
+    z-index: 100;
+}
+.enemy_plane{
+    position:absolute;
+    height: 100px;
+    width: 150px;
+    -moz-transform: rotate("180deg");
+    -webkit-transform: rotate("180deg");
+    -o-transform: rotate("180deg");
+    -ms-transform: rotate("180deg");
+    transform: rotate("180deg");
+    z-index: 100;
+}
+.kills {
+    position: absolute;
+    width: 300px;
+    height: 100px;
+    padding-left: 30px;
+    left: 0px;
+    top: 0px;
+    background: transparent;
+    z-index: 100;
+}

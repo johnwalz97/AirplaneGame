@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mobile Page</title>
+
+</head>
+<body>
+  <div id="wrapper">
+	<h1 id="join">Game is running</h1>
+	<p id="error"></p>
+  </div>
+  <div class="fire"  style='position: fixed; width: 400px; height: 400px; top: 0px; right: 0px; background: red;'></div>
+</body>
+</html>
+
+<script src="/js/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+
+<script type="text/javascript">
+	var socket = io.connect();
+    init();
+    function init() {
+        if (window.DeviceOrientationEvent) {
+            window.addEventListener('deviceorientation', function(eventData) {
+                var tiltLR = eventData.gamma;
+                var tiltFB = eventData.beta;
+                var dir = eventData.alpha
+                deviceOrientationHandler(tiltLR, tiltFB, dir);
+            }, false);
+        } 
+    }
+    function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+        socket.emit("update phone", {tiltLR: tiltLR, tiltFB: tiltFB})
+    }
+	$(document).click(function(){
+	  socket.emit("start");
+	})
+	$(".fire").bind('touchstart', function(e){
+		e.preventDefault();
+		socket.emit("fire");
+	})
+	$(".fire").bind('touchend', function(e){
+		e.preventDefault();
+		socket.emit("cease fire")
+	})
+</script>

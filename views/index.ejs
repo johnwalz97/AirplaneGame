@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Airplane Game</title>
+	<link rel="stylesheet" href="/css/style.css" />
+	<script src="/js/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+<!--	<div class='overlay'></div>
+	<div class='startgame'><h1>Click anywhere to start the game</h1></div>-->
+	<div class="bg" id="first"></div>
+	<div class="bg" id="second"></div>
+	<div class="bg" id="third"></div>
+	<div class="kills">
+		<h2 id="kills" style="color: red;">Current Kills: 0</h2>
+		<p style="color: red; font-size: 24px">40 Kills gets you a missile barrage!</p>
+	</div>
+	
+	<div id="canvas">
+		<img src="/assets/airplane.jpg" height=100px width=100px; id="my_plane" style="position:absolute; top:300px; left:200px;" />
+	</div>
+	
+<!--	game and bakground scripts
+-->	<script src="/js/game.js"></script>
+	<script src="/js/scroll.js"></script>
+</body>
+</html>
